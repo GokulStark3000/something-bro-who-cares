@@ -132,7 +132,6 @@ const HomePage = () => {
               >
                 Predictiva offers state-of-the-art tools designed to safeguard your clinical health and inform future lifestyle choices. Our solutions cover several prevalent and detrimental conditions, delivering accurate insights into your potential health risks. Built using comprehensive healthcare data, each tool analyses numerous medical and lifestyle factors to provide science-based predictions, and help you make educated decisions about your future well-being.
 
-
               </Typography>
               <Box
                 sx={{

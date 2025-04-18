@@ -14,6 +14,8 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import PredictionForm from '../components/PredictionForm';
 import AnimatedBackground from '../components/AnimatedBackground';
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
 const obesityFields = [
   {
     name: 'Gender',
@@ -174,7 +176,7 @@ const ObesityPage = () => {
         return acc;
       }, {} as any);
 
-      const response = await fetch('http://localhost:5000/obesity', {
+      const response = await fetch(`${backendUrl}/obesity`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

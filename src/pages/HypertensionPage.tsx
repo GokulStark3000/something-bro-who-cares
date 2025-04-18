@@ -14,6 +14,8 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import PredictionForm from '../components/PredictionForm';
 import AnimatedBackground from '../components/AnimatedBackground';
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
 const hypertensionFields = [
   {
     name: 'cp',
@@ -97,7 +99,7 @@ const HypertensionPage = () => {
         ca: parseFloat(data.ca)
       };
 
-      const response = await fetch('http://localhost:5000/hypertension', {
+      const response = await fetch(`${backendUrl}/hypertension`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

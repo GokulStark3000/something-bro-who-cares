@@ -14,6 +14,8 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import PredictionForm from '../components/PredictionForm';
 import AnimatedBackground from '../components/AnimatedBackground';
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
 const diabetesFields = [
   { name: 'age', label: 'Age', type: 'number' as const, required: true, min: 0, max: 120 },
   {
@@ -83,7 +85,7 @@ const DiabetesPage = () => {
         'smoking_history_not current': data.smoking_history === 4 ? 1 : 0
       };
 
-      const response = await fetch('http://localhost:5000/diabetes', {
+      const response = await fetch(`${backendUrl}/diabetes`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

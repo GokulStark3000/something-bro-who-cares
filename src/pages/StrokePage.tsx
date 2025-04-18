@@ -14,6 +14,8 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import PredictionForm from '../components/PredictionForm';
 import AnimatedBackground from '../components/AnimatedBackground';
 
+const backendUrl = process.env.REACT_APP_BACKEND_URL;
+
 interface FormData {
   sex: number;
   age: string | number;
@@ -124,7 +126,7 @@ const StrokePage = () => {
         smoking_status: parseFloat(data.smoking_status)
       };
 
-      const response = await fetch('http://localhost:5000/stroke', {
+      const response = await fetch(`${backendUrl}/stroke`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
